@@ -9,28 +9,29 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <ScrollView style={styles.innerContainer}>
         <Text style={styles.titleScreen}>
-          Bem-Vindo!
-          <Ionicons style={styles.iconStyle} name="ios-checkmark-circle" size={24} color={GlobalStyles.colors.orangeRedTitle} />
-        </Text>
-        <Text style={styles.subTitleScreen}>
-          Tire suas dúvidas sobre o seu exercício, 
-          veja dicas de alimentação e monte seu treino!
+          BEM-VINDO!
+          <Ionicons 
+            style={styles.iconStyle} 
+            name="ios-checkmark-circle" 
+            size={24} 
+            color={GlobalStyles.colors.orangeRedTitle} 
+          />
         </Text>
         <PresentationItem 
           title="Encontre seu exercício"
-          subTitle="Mais de 30 exercícios"
+          subTitle="Está com dúvida em algum exercício ? Encontre aqui os passos para como fazer do jeito certo"
           navPath="ExerciseScreen"
           imgPath={require("../assets/images/exercise-image.png")}
         />
         <PresentationItem 
           title="Dicas de alimentação"
-          subTitle="Todas refeições"
+          subTitle="Oferecemos sugestões de alimentação com base nos seus objetivos"
           navPath="ExerciseScreen"
           imgPath={require("../assets/images/foodImg.png")}
         />
         <PresentationItem 
           title="Veja nossos treinos"
-          subTitle="Para todos os músculos"
+          subTitle="Oferecemos treinos completos para cada músculo com base em seus objetivos"
           navPath="ExerciseScreen"
           imgPath={require("../assets/images/workoutImg.jpg")}
         />
@@ -56,7 +57,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: GlobalStyles.colors.orangeRedTitle,
     fontWeight: "bold",
-    marginTop: 15,
+    marginVertical: 20,
+    textAlign: "center",
   },
   subTitleScreen: {
     fontSize: 14,
