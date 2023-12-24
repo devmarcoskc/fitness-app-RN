@@ -1,23 +1,27 @@
-import { View, Text, StyleSheet, 
-ScrollView } from "react-native";
+import { Text, StyleSheet, ScrollView } from "react-native";
 import { GlobalStyles } from "../styles/GlobalStyles";
-import RNPickerSelect from "react-native-picker-select";
 import { useState } from "react";
 import PickerSelectMuscle from "../components/ExerciseScreen/PickerSelectMuscle";
 import PickerSelectExercise from "../components/ExerciseScreen/PickerSelectExercise";
 import ExerciseItem from "../components/ExerciseScreen/ExerciseItem";
+import SubTitle from "../components/UI/SubTitle";
 
 const ExerciseScreen = () => {
   const [muscleSelected, setMuscleSelected] = useState(null);
   const [exerciseSelected, setExerciseSelected] = useState(null);
 
+  const handleChangeValues = (value) => {
+    setExerciseSelected(null);
+    setMuscleSelected(value);
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.textTitle}>Está com dúvida em algum?</Text>
-      <Text style={styles.subTitle}>Sem problemas! Aqui mostramos como a maioria dos exercícios devem ser feitos, passo a passo!</Text>
-
-      <PickerSelectMuscle onChangeValue={setMuscleSelected}/>
-
+      <SubTitle text="Sem problemas! Aqui mostramos como a maioria dos exercícios 
+        devem ser feitos, passo a passo! Preencha abaixo os campos"
+      />
+      <PickerSelectMuscle onChangeValue={handleChangeValues}/>
       {muscleSelected && (
         <>
           <PickerSelectExercise 

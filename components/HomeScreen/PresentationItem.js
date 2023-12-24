@@ -19,7 +19,7 @@ const PresentationItem = ({title, subTitle, imageDesc, imgPath, navPath}) => {
       <View style={styles.backgroundBlack}/>
       <View style={styles.TextsTitleArea}>
         <Text style={styles.imageDesc}>
-          Mais de 30 exercícios
+          {imageDesc}
         </Text>
         <Ionicons
           name="arrow-forward-sharp"
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   backgroundBlack: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.17)',
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 10,
   },
   TextsTitleArea: {

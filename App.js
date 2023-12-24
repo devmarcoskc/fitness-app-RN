@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { GlobalStyles } from './styles/GlobalStyles';
@@ -7,6 +6,12 @@ import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from './screens/HomeScreen';
 import ExerciseScreen from './screens/ExerciseScreen';
+import WorkoutsScreen from './screens/WorkoutsScreen';
+import BackAndBiceps from './screens/BackAndBiceps';
+import ChestWorkout from './screens/ChestWorkout';
+import LegsWorkout from './screens/LegsWorkout';
+import AbdominalWorkout from './screens/Abdominal';
+import NutritionScreen from './screens/NutritionScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,42 +30,65 @@ export default function App() {
               backgroundColor: GlobalStyles.colors.orangeSubTitle
             },
             headerTintColor: 'white',
-            headerRight: (() => {
-              return <Ionicons
-                name="barbell-outline"
-                size={30}
-                color='white'
-              />
-            })
           }}
         >
           <Stack.Screen
             name='HomeScreen'
             component={HomeScreen}
             options={{
-              title: "Início"
+              title: "Início",
+              headerRight: () => {
+                return <Ionicons name='home-outline' size={25} color="white"/>
+              }
             }}
           />
           <Stack.Screen
             name='ExerciseScreen'
             component={ExerciseScreen}
             options={{
-              title:"Exercício",
+              title:"Exercícios",
             }}
           />
           <Stack.Screen
             name='NutritionScreen'
-            component={HomeScreen}
+            component={NutritionScreen}
             options={{
-              title:"Bem-vindo!",
-              headerTintColor: GlobalStyles.colors.orangeRedTitle
+              title:"Nossas receitas",
             }}
           />
           <Stack.Screen
             name='WorkoutsScreen'
-            component={HomeScreen}
+            component={WorkoutsScreen}
             options={{
-              title:"Bem-vindo!",
+              title:"Nossos Treinos",
+            }}
+          />
+          <Stack.Screen
+            name='BackWorkout'
+            component={BackAndBiceps}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name='ChestWorkout'
+            component={ChestWorkout}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name='LegsWorkout'
+            component={LegsWorkout}
+            options={{
+              headerShown: false
+            }}
+          />
+          <Stack.Screen
+            name='AbdominalWorkout'
+            component={AbdominalWorkout}
+            options={{
+              headerShown: false
             }}
           />
         </Stack.Navigator>
@@ -68,12 +96,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

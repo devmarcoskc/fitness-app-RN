@@ -4,7 +4,7 @@ import { GlobalStyles } from "../../styles/GlobalStyles";
 const Label = ({text}) => {
   return (
     <Text style={styles.selectTitle}>
-        {text}
+      {text}
     </Text>
   )
 }

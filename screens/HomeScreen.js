@@ -1,38 +1,40 @@
-import { View, Text, StyleSheet, Image,
+import { View, Text, StyleSheet,
 ScrollView } from "react-native";
 import PresentationItem from "../components/HomeScreen/PresentationItem";
 import { GlobalStyles } from "../styles/GlobalStyles";
-import {Ionicons} from '@expo/vector-icons';
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.innerContainer}>
+        <View style={styles.logoContainer}>
+        <View style={styles.imageLogoArea}>
+          <Text style={styles.iconText}>Seja</Text>
+          <Text style={styles.iconText}>Fit</Text>
+        </View>
+        </View>
         <Text style={styles.titleScreen}>
           BEM-VINDO!
-          <Ionicons 
-            style={styles.iconStyle} 
-            name="ios-checkmark-circle" 
-            size={24} 
-            color={GlobalStyles.colors.orangeRedTitle} 
-          />
         </Text>
         <PresentationItem 
           title="Encontre seu exercício"
-          subTitle="Está com dúvida em algum exercício ? Encontre aqui os passos para como fazer do jeito certo"
+          subTitle="Está com dúvidas em algum exercício? Veja aqui o passo a passo de como fazer da maneira correta."
           navPath="ExerciseScreen"
+          imageDesc="Mais de 30 exercícios"
           imgPath={require("../assets/images/exercise-image.png")}
         />
         <PresentationItem 
-          title="Dicas de alimentação"
-          subTitle="Oferecemos sugestões de alimentação com base nos seus objetivos"
-          navPath="ExerciseScreen"
+          title="Nossas receitas"
+          subTitle="Oferecemos nossas dicas de receitas para o seu pré-treino e pós-treino."
+          navPath="NutritionScreen"
+          imageDesc="Mais de 5 receitas"
           imgPath={require("../assets/images/foodImg.png")}
         />
         <PresentationItem 
           title="Veja nossos treinos"
-          subTitle="Oferecemos treinos completos para cada músculo com base em seus objetivos"
-          navPath="ExerciseScreen"
+          subTitle="Oferecemos sugestões de treinos completos para cada músculo."
+          navPath="WorkoutsScreen"
+          imageDesc="Treinos completos!"
           imgPath={require("../assets/images/workoutImg.jpg")}
         />
       </ScrollView>
@@ -52,6 +54,26 @@ const styles = StyleSheet.create({
     height: "100%",
     marginLeft: "5%",
     marginRight: "5%",
+  },
+  logoContainer: {
+    width: '100%',
+    height: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20
+  },
+  imageLogoArea: {
+    alignItems: 'center',
+    width: 80,
+    height: 80,
+    backgroundColor: GlobalStyles.colors.orangeSubTitle,
+    borderRadius: 40,
+    justifyContent: 'center'
+  },
+  iconText: {
+    color: 'white',
+    fontSize: 16,
+    fontStyle: 'italic'
   },
   titleScreen: {
     fontSize: 22,

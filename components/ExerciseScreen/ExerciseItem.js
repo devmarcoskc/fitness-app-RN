@@ -12,7 +12,7 @@ const ExerciseItem = ({exerciseName}) => {
     ExerciseItem.map((exercise) => (
       <View key={exercise.name} style={styles.container}>
         <Image
-          source={{uri:'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/costas-puxada-aberta-com-barra-no-pulley-1.gif'}}
+          source={exercise.gifPath}
           style={styles.gifStyle}
         />
         {exercise.steps.map((step, index) => (
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     color: GlobalStyles.colors.orangeDescription,
   }
-})
+});
